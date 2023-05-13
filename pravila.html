@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Naši najdraži sportovi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css" class="">
+    <script src="https://kit.fontawesome.com/d7256736fd.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: url("imgs/bg.png");
+            background-size: 7%;
+        }
+
+        #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        #myImg2 {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg2:hover {
+            opacity: 0.7;
+        }
+        
+        #prvi {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #prvi:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+        
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+        
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="imgs/basketball.png" width="75"></a>
+            <a class="navbar-brand" href="index.html">
+                <h1>Košarka!</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="esports.html"><b>Esports!</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="badminton.html"><b>Domagojev drugi izbor</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="andrejIzbor.html"><b>Andrejev drugi izbor</b></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><b>O
+                                nama</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="domagoj.html">Domagoj Smojver</a></li>
+                            <li><a class="dropdown-item" href="andrej.html">Andrej Stanković</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <img class="navbar-brand" id="myImg" src="imgs/domagoj.jpg" style="width:75px; height:auto;"
+            alt="Domagoj Smojver">
+        <img class="navbar-brand" id="myImg2" src="imgs/andrej.jpg" style="width:75px; height:auto;"
+            alt="Andrej Stanković">
+    </nav>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img02">
+        <div id="caption"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="index.html">
+                    <img class="img-responsive" src="imgs/opcenito.png" alt=""
+                        style="width: 400px; height: 300px;">
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="pravila.html">
+                    <img class="img-responsive" src="imgs/pravila.png" alt="" style="border: 5px solid #123fd1; width: 400px; height: 300px;">
+                    
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+                <a class="thumbnail" href="howto.html">
+                    <img class="img-responsive" src="imgs/howto.png" alt="" style="width: 400px; height: 300px;">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="p-3 mb-2 bg-warning text-dark">
+            <h1>Pravila</h1>
+            <p style="font-size:125%; ">Pravila igre košarke su standardizirana i definirana od strane FIBA (Svjetske košarkaške federacije). Ovdje ću navesti neka osnovna pravila:<br><br>
+
+                1. Igra se na terenu veličine 28 x 15 metara, s koševima smještenim na oba kraja terena.<br>
+                
+                2. Svaka momčad ima pet igrača na terenu, a igrači smiju zamjenjivati ​​tijekom igre.<br>
+                
+                3. Cilj igre je postići više poena od protivničke momčadi ubacivanjem lopte u protivnički koš. Koš se nalazi na visini od 3,05 metara iznad tla.<br>
+                
+                4. Poeni se postižu ubacivanjem lopte u koš, pri čemu se daju 2 poena ako je igrač ubacio loptu unutar linije za tricu (3-point line) i 3 poena ako je ubacio loptu izvan ove linije.<br>
+                
+                5. Igrači smiju driblati (driblanje) loptu kako bi ju se kretali po terenu, a mogu ju i pasirati drugim igračima.<br>
+                
+                6. Obrana može prekinuti protivnički napad tako što će ukrasti loptu ili izvršiti ometanje igrača koji drži loptu. Obrana se može postaviti u zoni ili čovjek-na-čovjeka.<br>
+                
+                7. Svaka momčad ima ograničeno vrijeme posjeda lopte (shot clock) od 24 sekunde, tijekom kojeg moraju pokušati ubaciti loptu u koš.<br>
+                
+                8. Igrači ne smiju držati loptu dulje od 5 sekundi dok su u kontaktu s protivničkom obranom.<br>
+                
+                9. Igrači ne smiju udariti ili ometati protivnika s namjerom da ga povrijede.<br>
+                
+                10. Svaki igrač ima ograničen broj osobnih prekršaja (obično pet), nakon čega igrač ne smije dalje sudjelovati u igri.<br><br>
+                
+                Ovo su neka osnovna pravila koja se primjenjuju u većini košarkaških liga širom svijeta, ali postoje i mnoge varijacije i iznimke koje se primjenjuju u određenim situacijama.</p>
+            <b><a href="http://kosarka.wikidot.com/pravila-u-kosarci">Više o pravilima u košarci</a></b><br>
+            <img id="prvi" src="imgs/sudac.jpg" width= "500" height="350" 
+                style="display:block; margin-left: auto; margin-right: auto; border: 5px solid #123fd1; ">
+        </div>
+    </div>
+
+    <div class="container">
+        <p style="font-size:125%;">
+            <a class="link-primary" href="bavimolise.html"><b>Bavimo li se mi ovim sportom?</b></a>
+        </p>
+    </div>
+
+    <footer class="bg-primary text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+
+            <!-- Section: Social media -->
+
+            <!-- Section: Form -->
+            <section class="">
+                <form action="">
+                    <!--Grid row-->
+
+                    <!--Grid row-->
+                </form>
+            </section>
+            <!-- Section: Form -->
+
+            <!-- Section: Text -->
+            <section class="mb-4">
+                <p>
+                    Web stranica izrađena za vrijeme pohađanja <a class="link-warning"
+                        href="https://www.ferit.unios.hr/">Fakulteta elektrotehnike, računarstva i informacijskih
+                        tehnologija</a> u Osijeku u sklopu kolegija
+                    <a class="link-warning"
+                        href="https://moodle.srce.hr/2022-2023/course/view.php?id=128846">Multimedijska tehnika</a>.
+                </p>
+            </section>
+            <!-- Section: Text -->
+
+            <!-- Section: Links -->
+
+            <!-- Section: Links -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">Domagoj Smojver & Andrej Stanković</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById("myImg");
+        var img2 = document.getElementById("myImg2");
+        var prvi = document.getElementById("prvi");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        img2.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        prvi.onclick = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>
