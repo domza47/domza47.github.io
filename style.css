@@ -1,0 +1,23 @@
+
+
+nav {
+    margin-bottom: 25px;
+    position: fixed;
+}
+
+.row {
+    margin-bottom: 25px
+}
+
+footer {
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #454545;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30 px 0;
+    border-radius: 30;
+}
